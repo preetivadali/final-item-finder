@@ -3,7 +3,6 @@ import { IoMenu } from "react-icons/io5";
 import { IoIosArrowBack } from "react-icons/io";
 import { IconContext } from "react-icons";
 
-
 const Container = styled.div`
   height: 4rem; //64px
   display: flex;
@@ -33,7 +32,7 @@ const TopAppBar = () => {
   return (
     <div>
       <Container>
-        <IconContext.Provider value={{ size: "1.5rem" }}>
+        <IconContext.Provider value={{ size: "1.5rem" }} >
 
           <LeadingIcon>
             <IoIosArrowBack />

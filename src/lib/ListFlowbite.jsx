@@ -1,4 +1,8 @@
 import { ListGroup } from "flowbite-react";
+import { BsTools } from "react-icons/bs";
+import { IconContext } from "react-icons";
+import { PiTreeEvergreenFill } from "react-icons/pi";
+
 
 const ListFlowbite = () => {
   return (
@@ -6,10 +10,20 @@ const ListFlowbite = () => {
       <ListGroup className="w-screen rounded-none">
         {/* LATER: map through item array to render ListGroup.Item */}
         <ListGroup.Item className="text-zinc-500" >
-          <div className="w-24 h-16 bg-[url(https://picsum.photos/100/100)] bg-cover"></div>
+          <div className="flex gap-5 items-center">
+            <IconContext.Provider value={{ size: "5rem" }}>
+              <BsTools className="w-8"/>
+            </IconContext.Provider>
+            <p>Household Tools</p>
+          </div>
+        </ListGroup.Item>
 
-          <div className="flex ml-5 flex-col items-start">
-            <p>headline</p>
+        <ListGroup.Item className="text-zinc-500" >
+          <div className="flex gap-5 items-center">
+            <IconContext.Provider value={{ size: "5rem" }}>
+              <PiTreeEvergreenFill className="w-8"/>
+            </IconContext.Provider>
+            <p>Gardening Tools</p>
           </div>
         </ListGroup.Item>
 
