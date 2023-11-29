@@ -6,6 +6,7 @@ const NavbarFlowbite = () => {
   return (
     <>
       <Navbar fluid className="w-full list-none border-red-500">
+        {/* LATER: map through item array to render Navbar.Link? */}
           <Navbar.Link className="flex flex-col items-center">
             <MdHome />
             Home
