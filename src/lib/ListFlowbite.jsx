@@ -3,7 +3,7 @@ import { ListGroup } from "flowbite-react";
 const ListFlowbite = () => {
   return (
     <div>
-      <ListGroup className="w-80">
+      <ListGroup className="w-screen rounded-none">
         {/* LATER: map through item array to render ListGroup.Item */}
         <ListGroup.Item className="text-zinc-500" >
           <div>
