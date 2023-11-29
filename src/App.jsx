@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import ButtonFlowbite from "./lib/ButtonFlowbite";
 import ListGroup from "./lib/ListFlowbite";
 import ListFlowbite from "./lib/ListFlowbite";
+import NavbarFlowbite from "./lib/NavbarFlowbite";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <p>logo</p>
       {/* <ButtonFlowbite /> */}
       <ListFlowbite />
+      <NavbarFlowbite />
     </div>
   );
 };
