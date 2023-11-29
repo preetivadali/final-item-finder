@@ -19,6 +19,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column; 
   justify-content: center;
+  color: #1D1B20;
 `
 const Headline = styled.p`
   font-weight: 700;
