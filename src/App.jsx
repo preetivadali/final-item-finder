@@ -2,7 +2,8 @@ import LoginModal from "./components/LoginModal";
 import ListOneLine from "./lib/ListOneLine";
 import ListTwoLine from "./lib/ListTwoLine";
 import TopAppBar from "./lib/TopAppBar";
-import NavBar from "./lib/NavBar"
+import NavBar from "./lib/NavBar";
+import Button from "./lib/Button";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <ListOneLine />
       <ListTwoLine />
       <ListTwoLine />
+      <Button />
       <NavBar />
     </div>
   );

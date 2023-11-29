@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { IoMenu } from "react-icons/io5";
-import { IoIosSettings } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 import { IconContext } from "react-icons";
 
 
@@ -34,13 +34,17 @@ const TopAppBar = () => {
     <div>
       <Container>
         <IconContext.Provider value={{ size: "1.5rem" }}>
+
           <LeadingIcon>
-            <IoMenu />
+            <IoIosArrowBack />
           </LeadingIcon>
+
           <Headline>headline</Headline>
+
           <TrailingIcon>
-            <IoIosSettings />
+            <IoMenu />
           </TrailingIcon>
+
         </IconContext.Provider>
       </Container>
     </div>
