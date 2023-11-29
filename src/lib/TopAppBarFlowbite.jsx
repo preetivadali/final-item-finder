@@ -5,9 +5,8 @@ const TopAppBarFlowbite = () => {
   return (
     <>
       <Navbar className="w-full">
-        <Button pill>
+        <Button pill className="bg-transparent text-zinc-500 hover:bg-emerald-500 focus:outline-none focus:ring-emerald-300" >
           <IoIosArrowBack />
-          Back
         </Button>
 
         <Navbar.Toggle />
