@@ -1,9 +1,12 @@
+// form to log in
+
 "use client";
 
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Label, Card, TextInput } from "flowbite-react";
 import { getToken } from "../reducers/loginSlice";
+import { setIsNew } from "../reducers/registerSlice";
 import CustomButton from "../lib/CustomButton";
 
 /*
@@ -18,12 +21,13 @@ fetch('URL', {
 })
 */
 
-const Login = () => {
+const LoginForm = () => {
   const [isValid, setIsValid] = useState(true);
   const [loginData, setLoginData] = useState({ username: "", password: "" });
 
   const dispatch = useDispatch();
   const login = useSelector((state) => state.login);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     if (loginData.username.length > 0) {
@@ -36,7 +40,7 @@ const Login = () => {
   const handleConfirm = () => {
     dispatch(getToken(loginData)).then(() => {
       if (login.access_token.length > 1) {
-        setIsOpen(false); // what happens instead of modal closing?? navigate to home pg?
+        setIsOpen(false); // something happens here instead of modal closing
       }
     });
   };
@@ -45,7 +49,7 @@ const Login = () => {
     <>
       {login.token && <h1>{login.token}</h1>}
       <Card>
-        <form className="space-y-4">
+        <form className="space-y-2">
           <h3 className="text-xl mx-auto font-medium text-gray-900 dark:text-white">
             Login
           </h3>
@@ -88,7 +92,8 @@ const Login = () => {
             >
               Confirm
             </CustomButton>
-            <p className="text-xs">Not a member? Click <a href="">here</a>
+            <p className="text-xs">
+              Not a member? Click <button className="underline" onClick={() => dispatch(setIsNew())} >here</button>
             </p>
           </div>
         </form>
@@ -97,4 +102,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;

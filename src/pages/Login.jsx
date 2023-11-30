@@ -1,14 +1,26 @@
-import LoginModal from "./components/LoginModal";
-import LoginUser from "./components/LoginUser";
+// first page user sees
+// login or option to register as new user
+
+import { useSelector } from "react-redux";
+import LoginForm from "../components/LoginForm";
+import RegisterForm from "../components/RegisterForm";
 
 const Login = () => {
+  const user = useSelector((store) => store.user);
+  //console.log(user.isNew);
+
   return (
     <div className="flex flex-col w-full h-screen justify-center items-center bg-emerald-500">
       <div>
         logo
         <img src="" />
       </div>
-      <LoginUser />
+      {user.isNew ? (
+        <RegisterForm />
+      ) : (
+        <LoginForm /> 
+      )}
+        
     </div>
   );
 };
