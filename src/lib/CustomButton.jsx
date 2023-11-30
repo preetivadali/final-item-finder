@@ -1,6 +1,6 @@
 import { Button } from 'flowbite-react';
 
-const ButtonFlowbite = ({ children, color, className }) => {
+const CustomButton = ({ children, color, className }) => {
   return (
     <div>
       <Button color={color} className={className} pill >{children}</Button>
@@ -8,4 +8,4 @@ const ButtonFlowbite = ({ children, color, className }) => {
   );
 };
 
-export default ButtonFlowbite;
+export default CustomButton;
