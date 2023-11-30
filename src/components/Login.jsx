@@ -77,7 +77,7 @@ const Login = () => {
               }
             />
           </div>
-          <div className="flex justify-center">
+          <div className="flex flex-col items-center gap-3">
             <ButtonFlowbite
               className="bg-emerald-500"
               disabled={!isValid}
@@ -85,6 +85,8 @@ const Login = () => {
             >
               Confirm
             </ButtonFlowbite>
+            <p className="text-xs">Not a member? Click <a href="">here</a>
+            </p>
           </div>
         </div>
       </Card>
