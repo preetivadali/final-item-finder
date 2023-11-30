@@ -48,7 +48,7 @@ const LoginForm = () => {
   return (
     <>
       {login.token && <h1>{login.token}</h1>}
-      <Card>
+      <Card className="md:w-2/4 lg:w-1/4">
         <form className="space-y-2">
           <h3 className="text-xl mx-auto font-medium text-gray-900 dark:text-white">
             Login
