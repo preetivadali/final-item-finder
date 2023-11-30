@@ -1,18 +1,15 @@
 import LoginModal from "./components/LoginModal";
 import Login from "./components/Login";
-import ButtonFlowbite from "./lib/ButtonFlowbite";
-import ListGroup from "./lib/ListFlowbite";
-import ListFlowbite from "./lib/ListFlowbite";
-import TopAppBarFlowbite from "./lib/TopAppBarFlowbite";
-import NavbarFlowbite from "./lib/NavbarFlowbite";
 
 const App = () => {
+
   return (
-    <div className="flex flex-col max-w-full min-h-screen justify-center items-center bg-emerald-500">
-      {/* <ButtonFlowbite /> */}
-      <TopAppBarFlowbite />
-      <ListFlowbite />
-      <NavbarFlowbite />
+    <div className="flex flex-col w-full h-screen justify-center items-center bg-emerald-500">
+      <div>
+        logo
+        <img src="" />
+      </div>
+      <Login />
     </div>
   );
 };

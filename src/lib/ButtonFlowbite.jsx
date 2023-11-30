@@ -1,9 +1,9 @@
 import { Button } from 'flowbite-react';
 
-const ButtonFlowbite = () => {
+const ButtonFlowbite = ({ children, color, className }) => {
   return (
     <div>
-      <Button color="gray" >button</Button>
+      <Button color={color} className={className} pill >{children}</Button>
     </div>
   );
 };

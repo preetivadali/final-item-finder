@@ -3,11 +3,15 @@ import { IoIosArrowBack } from "react-icons/io";
 
 const TopAppBarFlowbite = () => {
   return (
-    <>
-      <Navbar className="w-full">
-        <Button pill className="bg-transparent text-zinc-500 hover:bg-emerald-500 focus:outline-none focus:ring-emerald-300" >
+    <div className="w-full justify-start">
+      <Navbar fluid className="px-4">
+        <Button pill color="gray" >
           <IoIosArrowBack />
         </Button>
+
+        <Navbar.Brand className="text-xl">
+          Search
+        </Navbar.Brand>
 
         <Navbar.Toggle />
         
@@ -25,7 +29,7 @@ const TopAppBarFlowbite = () => {
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
-    </>
+    </div>
   );
 };
 
