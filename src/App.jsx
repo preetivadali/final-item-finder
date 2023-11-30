@@ -1,16 +1,11 @@
-import LoginModal from "./components/LoginModal";
-import Login from "./components/Login";
+import { BrowserRouter } from "react-router-dom";
+import routes from "./routes/routes";
 
 const App = () => {
-
   return (
-    <div className="flex flex-col w-full h-screen justify-center items-center bg-emerald-500">
-      <div>
-        logo
-        <img src="" />
-      </div>
-      <Login />
-    </div>
+    <BrowserRouter>
+      { routes }
+    </BrowserRouter>
   );
 };
 
