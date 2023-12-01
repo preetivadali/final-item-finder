@@ -28,7 +28,7 @@ const Home = () => {
         </ListGroup.Item>
         ))}
       </ListGroup>
-      <Navbar />
+      {/* <Navbar /> */}
     </>
   );
 };
