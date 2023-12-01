@@ -23,7 +23,7 @@ const Search = () => {
 
   return (
     <>
-      {/* Search input field */}
+      {/* Search input field - onChange render list of relevant items */}
       <form className="flex flex-col m-5 gap-2">
         <Label htmlFor="inputSearch" value="What are you looking for?" className="text-zinc-500"></Label>
         <div className="flex gap-4">
