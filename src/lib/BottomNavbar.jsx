@@ -3,11 +3,10 @@ import { NavLink } from "react-router-dom";
 import { appPages } from "../routes/routes";
 // import { MdHome, MdSearch, MdFavorite, MdAddBox } from "react-icons/md";
 
-
-const NavbarFlowbite = () => {
+const BottomNavbar = () => {
   return (
     <Navbar fluid className="fixed bottom-0 left-0 w-full list-none bg-emerald-500">
-      {appPages.map(({ path, name, icon, index, menus }) =>
+      {appPages.map(({ path, name, icon, index, menus, navbar }) =>
         menus.includes("navbar") && (
           <li key={index}>
             <Navbar.Link as={NavLink} to={path} className="flex flex-col items-center">
@@ -21,4 +20,4 @@ const NavbarFlowbite = () => {
   );
 };
 
-export default NavbarFlowbite;
+export default BottomNavbar;

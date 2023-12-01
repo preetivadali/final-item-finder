@@ -10,9 +10,10 @@ const initialState = [
     desc: "desc",
     image: "https://picsum.photos/100/100)",
     datesUnavailable: [],
-    createdAt: "2023-11-29T18:32:53.205Z",
+    created: "2023-11-29T18:32:53.205Z",
     sellerId: "id",
-    longitude: [],
+    location: [],
+    favorite: false,
   },
   {
     id: uuidv4(),
@@ -21,9 +22,10 @@ const initialState = [
     desc: "desc",
     image: "https://picsum.photos/100/100)",
     datesUnavailable: [],
-    createdAt: "2023-11-28T18:32:53.205Z",
+    created: "2023-11-28T18:32:53.205Z",
     sellerId: "id",
-    longitude: [],
+    location: [],
+    favorite: false,
   },
   {
     id: uuidv4(),
@@ -32,9 +34,10 @@ const initialState = [
     desc: "desc",
     image: "https://picsum.photos/100/100)",
     datesUnavailable: [],
-    createdAt: "2023-11-30T18:32:53.205Z",
+    created: "2023-11-30T18:32:53.205Z",
     sellerId: "id",
-    longitude: [],
+    location: [],
+    favorite: false,
   }
 ];
 
@@ -47,7 +50,13 @@ when fetching items data from API, sort by newest to oldest when saving to globa
 
 const itemSlice = createSlice({
   name: "items",
-  initialState
+  initialState,
+  reducers: {
+    addFavorite: (state) => {
+      state.favorite= !state.favorite;
+    }
+  }
 });
 
+export const { addFavorite } = itemSlice.actions;
 export default itemSlice.reducer;

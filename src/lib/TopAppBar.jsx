@@ -1,7 +1,7 @@
 import { Navbar, Button } from "flowbite-react";
 import { IoIosArrowBack } from "react-icons/io";
 
-const TopAppBarFlowbite = ({ children }) => {
+const TopAppBar = ({ children }) => {
   return (
     <div className="w-full">
       <Navbar fluid className="px-4 bg-zinc-300">
@@ -37,4 +37,4 @@ const TopAppBarFlowbite = ({ children }) => {
   );
 };
 
-export default TopAppBarFlowbite;
+export default TopAppBar;

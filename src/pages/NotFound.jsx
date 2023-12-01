@@ -29,6 +29,7 @@ const NotFound = () => {
         >
           Go to Home page
         </CustomButton>
+        
         <CustomButton
           color="success"
           className="bg-emerald-500"
