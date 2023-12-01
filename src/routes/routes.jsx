@@ -12,34 +12,35 @@ export const appPages = [
     component: Login,
     menus: [],
     path: "/",
-    icon: ""
+    icon: null
   },
   {
     name: "Home",
     component: Home,
     menus: ["topAppBar, navbar"],
     path: "/home",
-    icon: MdHome
+    icon: <MdHome />
   },
   {
     name: "About",
     component: About,
     menus: ["navbar"],
     path: "/about",
-    icon: ""
+    icon: null
   },
   {
     name: "Search",
     component: Search,
     menus: ["navbar"],
     path: "/search",
-    icon: MdSearch
+    icon: <MdSearch />
   },
   {
     name: "Not Found",
     component: NotFound,
     menus: [],
-    path: '*'
+    path: '*',
+    icon: null
   },
 ]
 

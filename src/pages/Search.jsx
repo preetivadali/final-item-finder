@@ -1,9 +1,51 @@
+// search bar to search for item
+// list of categories to search by category
+import { ListGroup, Label, TextInput } from "flowbite-react";
+import { IconContext } from "react-icons";
+import { BsTools } from "react-icons/bs";
+import { PiTreeEvergreenFill } from "react-icons/pi";
+import { MdSearch } from "react-icons/md";
 
 const Search = () => {
+  // temp category array; may need to change to global state?
+  const categories = [
+    {
+      id: 1,
+      name: "Household Tools",
+      icon: <BsTools />
+    },
+    {
+      id: 2,
+      name: "Gardening",
+      icon: <PiTreeEvergreenFill />
+    }
+  ];
+
   return (
-    <div>
-      
-    </div>
+    <>
+      {/* Search input field */}
+      <form className="flex flex-col m-5 gap-2">
+        <Label htmlFor="inputSearch" value="What are you looking for?" className="text-zinc-500"></Label>
+        <div className="flex gap-4">
+          <TextInput id="inputSearch" type="text" icon={MdSearch} placeholder="Search keyword or category" className="w-full"></TextInput>
+        </div>
+      </form>
+
+      {/* List of item categories - onClick render list of items in that category */}
+      <h3 className="text-zinc-500 ml-5 mb-2">Categories</h3>
+      <ListGroup className="w-screen rounded-none">
+        {categories.map(({ name, icon, id}) => (
+          <ListGroup.Item className="text-zinc-500 key={id}">
+            <div className="flex gap-5 h-20 items-center">
+              <IconContext.Provider value={{ size: "2rem" }}>
+                {icon}
+              </IconContext.Provider>
+              {name}
+            </div>
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+    </>
   )
 }
 
