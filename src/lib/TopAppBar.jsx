@@ -3,8 +3,8 @@ import { IoIosArrowBack } from "react-icons/io";
 
 const TopAppBarFlowbite = ({ children }) => {
   return (
-    <div className="w-full justify-start">
-      <Navbar fluid className="px-4">
+    <div className="w-full">
+      <Navbar fluid className="px-4 bg-zinc-300">
         <Button pill color="gray" >
           <IoIosArrowBack />
         </Button>

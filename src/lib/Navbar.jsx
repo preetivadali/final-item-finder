@@ -5,7 +5,7 @@ import { MdHome, MdSearch, MdFavorite, MdAddBox } from "react-icons/md";
 const NavbarFlowbite = () => {
   return (
     <>
-      <Navbar fluid className="w-full list-none border-red-500">
+      <Navbar fluid className="fixed bottom-0 left-0 w-full list-none bg-emerald-500">
         {/* LATER: map through item array to render Navbar.Link? */}
           <Navbar.Link className="flex flex-col items-center">
             <MdHome />

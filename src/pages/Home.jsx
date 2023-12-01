@@ -5,6 +5,7 @@
 import { useSelector } from "react-redux";
 import { ListGroup } from "flowbite-react";
 import TopAppBar from "../lib/TopAppBar";
+import Navbar from "../lib/Navbar";
 
 const Home = () => {
   const items = useSelector((store) => store.items);
@@ -27,6 +28,7 @@ const Home = () => {
         </ListGroup.Item>
         ))}
       </ListGroup>
+      <Navbar />
     </>
   );
 };
