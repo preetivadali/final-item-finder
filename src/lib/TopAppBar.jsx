@@ -1,7 +1,7 @@
 import { Navbar, Button } from "flowbite-react";
 import { IoIosArrowBack } from "react-icons/io";
 
-const TopAppBarFlowbite = () => {
+const TopAppBarFlowbite = ({ children }) => {
   return (
     <div className="w-full justify-start">
       <Navbar fluid className="px-4">
@@ -10,7 +10,7 @@ const TopAppBarFlowbite = () => {
         </Button>
 
         <Navbar.Brand className="text-xl">
-          Search
+          {children}
         </Navbar.Brand>
 
         <Navbar.Toggle />
@@ -26,6 +26,10 @@ const TopAppBarFlowbite = () => {
 
           <Navbar.Link>
             Settings
+          </Navbar.Link>
+
+          <Navbar.Link>
+            Sign out
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>
