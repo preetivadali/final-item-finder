@@ -5,7 +5,7 @@ const TopAppBarFlowbite = ({ children }) => {
   return (
     <div className="w-full">
       <Navbar fluid className="px-4 bg-zinc-300">
-        <Button pill color="gray" >
+        <Button pill color="gray" className="bg-transparent border-transparent">
           <IoIosArrowBack />
         </Button>
 

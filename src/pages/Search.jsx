@@ -4,10 +4,10 @@ import { ListGroup, Label, TextInput } from "flowbite-react";
 import { IconContext } from "react-icons";
 import { BsTools } from "react-icons/bs";
 import { PiTreeEvergreenFill } from "react-icons/pi";
-import { MdSearch } from "react-icons/md";
+import { MdSearch, MdOutlinePedalBike, MdSportsEsports, MdOutlineSportsSoccer } from "react-icons/md";
 
 const Search = () => {
-  // temp category array; may need to change to global state?
+  // temp category array; may need to change to global state
   const categories = [
     {
       id: 1,
@@ -18,6 +18,21 @@ const Search = () => {
       id: 2,
       name: "Gardening",
       icon: <PiTreeEvergreenFill />
+    },
+    {
+      id: 3,
+      name: "Gaming",
+      icon: <MdSportsEsports />
+    },
+    {
+      id: 4,
+      name: "Transportation",
+      icon: <MdOutlinePedalBike />
+    },
+    {
+      id: 5,
+      name: "Sports & Leisure",
+      icon: <MdOutlineSportsSoccer />
     }
   ];
 
@@ -32,7 +47,7 @@ const Search = () => {
       </form>
 
       {/* List of item categories - onClick render list of items in that category */}
-      <h3 className="text-zinc-500 ml-5 mb-2">Categories</h3>
+      <h3 className="text-zinc-500 font-bold ml-5 mb-2">Categories</h3>
       <ListGroup className="w-screen rounded-none">
         {categories.map(({ name, icon, id}) => (
           <ListGroup.Item className="text-zinc-500 key={id}">

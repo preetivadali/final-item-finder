@@ -7,8 +7,8 @@ import { appPages } from "../routes/routes";
 const NavbarFlowbite = () => {
   return (
     <Navbar fluid className="fixed bottom-0 left-0 w-full list-none bg-emerald-500">
-      {appPages.map(({ path, name, icon, index }) =>
-        page.menus.includes("navbar") && (
+      {appPages.map(({ path, name, icon, index, menus }) =>
+        menus.includes("navbar") && (
           <li key={index}>
             <Navbar.Link as={NavLink} to={path} className="flex flex-col items-center">
               {icon}

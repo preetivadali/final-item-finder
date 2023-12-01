@@ -13,7 +13,8 @@ const Home = () => {
 
   return (
     <>
-      <TopAppBar>Recently listed items</TopAppBar>
+      {/* <TopAppBar>Recently listed items</TopAppBar> */}
+      {/* List of recently added items, should be sorted by newest */}
       <ListGroup className="w-screen rounded-none">
         {items.map(({ title, desc, id}) => (
           <ListGroup.Item className="text-zinc-500" key={id}>
@@ -22,13 +23,13 @@ const Home = () => {
             </div>
 
           <div className="flex ml-5 flex-col items-start">
-            <p>{title}</p>
-            <p>{desc}</p>
+            <p className="font-bold">{title}</p>
+            <p className="font-normal">{desc}</p>
           </div>
         </ListGroup.Item>
         ))}
       </ListGroup>
-      {/* <Navbar /> */}
+      <Navbar />
     </>
   );
 };

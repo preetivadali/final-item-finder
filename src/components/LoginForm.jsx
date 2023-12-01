@@ -27,7 +27,6 @@ const LoginForm = () => {
 
   const dispatch = useDispatch();
   const login = useSelector((state) => state.login);
-  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     if (loginData.username.length > 0) {
@@ -39,8 +38,8 @@ const LoginForm = () => {
 
   const handleConfirm = () => {
     dispatch(getToken(loginData)).then(() => {
-      if (login.access_token.length > 1) {
-        setIsOpen(false); // something happens here instead of modal closing
+      if (login.access_token.length > 1) { // does this mean username + password authenticated?
+        setIsOpen(false); // if yes, navigate to home page
       }
     });
   };
