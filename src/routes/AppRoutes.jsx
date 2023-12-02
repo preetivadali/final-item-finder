@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -52,12 +53,22 @@ export const appPages = [
   }
 ]
 
-const routes = (
-  <Routes>
-    {appPages.map((page, index) => (
-      <Route key={index} path={page.path} element={<page.component />} />
-    ))}
-  </Routes>
-);
 
-export default routes;
+const AppRoutes = () => {
+  const accessToken = useSelector(state => state.login.access_token);
+  console.log("accessToken", accessToken)
+
+  return (
+    <Routes>
+      {appPages.map((page, index) => {
+        if (page.name === "Login" && accessToken) {
+          return <Route key={index} path={page.path} element={<Navigate to="/home" />} />
+        }
+
+        return <Route key={index} path={page.path} element={<page.component />} />
+    })}
+    </Routes>
+  )      
+}
+
+export default AppRoutes;

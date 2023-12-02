@@ -1,6 +1,6 @@
 import { Navbar } from "flowbite-react";
 import { NavLink } from "react-router-dom";
-import { appPages } from "../routes/routes";
+import { appPages } from "../routes/AppRoutes";
 // import { MdHome, MdSearch, MdFavorite, MdAddBox } from "react-icons/md";
 
 const BottomNavbar = () => {
