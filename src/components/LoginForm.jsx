@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Label, Card, TextInput } from "flowbite-react";
+import { Label, Card, TextInput, Checkbox } from "flowbite-react";
 import { getToken } from "../reducers/loginSlice";
 import { setIsNew } from "../reducers/registerSlice";
 import CustomButton from "../lib/CustomButton";
@@ -23,7 +23,11 @@ fetch('URL', {
 
 const LoginForm = () => {
   const [isValid, setIsValid] = useState(true);
-  const [loginData, setLoginData] = useState({ username: "", password: "" });
+  const [loginData, setLoginData] = useState({
+    username: "",
+    password: "",
+    remember: false,
+  });
 
   const dispatch = useDispatch();
   const login = useSelector((state) => state.login);
@@ -36,9 +40,11 @@ const LoginForm = () => {
     }
   }, [loginData.username]);
 
-  const handleConfirm = () => {
+  const handleConfirm = (e) => {
+    e.preventDefault();
     dispatch(getToken(loginData)).then(() => {
-      if (login.access_token.length > 1) { // does this mean username + password authenticated?
+      if (login.access_token.length > 1) {
+        // does this mean username + password authenticated? yes, well guessed! although I might look into a better way of checking
         setIsOpen(false); // if yes, navigate to home page
       }
     });
@@ -82,17 +88,34 @@ const LoginForm = () => {
               required
             />
           </div>
+          <div className="flex items-center gap-2">
+            <Checkbox
+              id="remember"
+              checked={loginData.remember}
+              onChange={() =>
+                setLoginData({ ...loginData, remember: !loginData.remember })
+              }
+            />
+            <Label htmlFor="remember">Remember me</Label>
+          </div>
           <div className="flex flex-col items-center gap-3">
             <CustomButton
               color="success"
               className="bg-emerald-500"
               disabled={!isValid}
-              onClick={() => handleConfirm()}
+              onClick={(e) => handleConfirm(e)}
+              type="submit"
             >
               Confirm
             </CustomButton>
             <p className="text-xs">
-              Not a member? Click <button className="underline" onClick={() => dispatch(setIsNew())} >here</button>
+              Not a member? Click{" "}
+              <button
+                className="underline"
+                onClick={() => dispatch(setIsNew())}
+              >
+                here
+              </button>
             </p>
           </div>
         </form>
