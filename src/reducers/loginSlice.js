@@ -37,7 +37,7 @@ const loginSlice = createSlice({
     test: (state, action) => {
       console.log("state", state);
       console.log("action", action);
-    },
+    }
   },
   extraReducers: (builder) => {
     builder

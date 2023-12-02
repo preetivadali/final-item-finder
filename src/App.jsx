@@ -1,10 +1,11 @@
-import LoginModal from "./components/LoginModal";
+import { BrowserRouter } from "react-router-dom";
+import routes from "./routes/routes";
 
 const App = () => {
   return (
-    <div className="md:container md:mx-auto">
-      <LoginModal />
-    </div>
+    <BrowserRouter>
+      { routes }
+    </BrowserRouter>
   );
 };
 
