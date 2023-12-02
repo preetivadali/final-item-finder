@@ -4,8 +4,8 @@ const url = "http://basternet.ddns.net:8777/token/";
 
 const initialState = {
   isLoading: false,
-  access_token: "",
-  token_type: "",
+  access_token: localStorage.getItem("access_token"),
+  token_type: localStorage.getItem("token_type"),
 };
 
 export const getToken = createAsyncThunk(
@@ -23,6 +23,10 @@ export const getToken = createAsyncThunk(
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
+      if (payload.remember) {
+        localStorage.setItem("access_token", data.access_token);
+        localStorage.setItem("token_type", data.token_type);
+      }
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue("something went wrong");
@@ -37,7 +41,7 @@ const loginSlice = createSlice({
     test: (state, action) => {
       console.log("state", state);
       console.log("action", action);
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
